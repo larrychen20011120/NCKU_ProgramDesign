@@ -1,7 +1,4 @@
 #include <stdio.h>
-int f(int a, int b, int n){
-
-}
 
 int main(){
     int x1, x2, n;
