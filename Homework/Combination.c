@@ -1,17 +1,15 @@
 #include <stdio.h>
-
-int main() {
-    int m, n;
-    long long int stair = 1;
-    scanf("%d %d", &m, &n);
-    n = n > m / 2 ? m - n : n;
-    for (int i = m; i > m - n; i-- ){
-        stair *= i;
+int combination(int m, int n){
+    if ((m == n) || (n == 0)){
+        return 1;
+    }else{
+        return combination(m - 1, n) + combination(m - 1, n - 1);
     }
-    for (int i = 1; i <= n; i++){
-        stair /= i;
-    }
-    printf("%lld", stair);
-    return 0;
 }
+int main(){
+    int m, n;
+    scanf("%d%d", &m, &n);
+    printf("%d", combination(m, n));
+    return 0;
 
+}
